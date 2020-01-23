@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-
     var gameNumber = 0
     var minNumber = 1
     var maxNumber = 100
@@ -55,7 +54,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func enterGuess(_ sender: Any) {
-        let guessNumber = Int(userGuessTextField.text!) ?? -1
+        let guessString = userGuessTextField.text ?? ""
+        let guessNumber = Int(guessString) ?? -1
+        
         userGuessTextField.text = ""
         checkGuess(guessNumber: guessNumber)
     }
