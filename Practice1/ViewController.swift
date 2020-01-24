@@ -54,10 +54,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func enterGuess(_ sender: Any) {
-        let guessString = userGuessTextField.text ?? ""
-        let guessNumber = Int(guessString) ?? -1
-        userGuessTextField.text = ""
-        checkGuess(guessNumber: guessNumber)
+        if let guessString = userGuessTextField.text, let guessNumber = Int(guessString) {
+            userGuessTextField.text = ""
+            checkGuess(guessNumber: guessNumber)
+        } else {
+            userGuessTextField.text = ""
+            return
+        }
     }
     
     @IBAction func reset(_ sender: Any) {
