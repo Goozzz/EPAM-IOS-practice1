@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func enterGuess(_ sender: Any) {
-        if let guessString = userGuessTextField.text, let guessNumber = Int(guessString) {
+        if let userText = userGuessTextField.text, let guessNumber = Int(userText) {
             userGuessTextField.text = ""
             checkGuess(guessNumber: guessNumber)
         } else {
