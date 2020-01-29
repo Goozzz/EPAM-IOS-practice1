@@ -45,6 +45,20 @@
                                     <action selector="enterGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xhN-f6-Fo7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Steps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1T-i7-CyZ">
+                                <rect key="frame" x="161" y="127" width="55" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2g-AL-f3m">
+                                <rect key="frame" x="168" y="162" width="39" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
@@ -59,6 +73,7 @@
                         <outlet property="inputNumberButton" destination="6HO-Y7-UEm" id="nOJ-Mx-bVZ"/>
                         <outlet property="resetButton" destination="ISz-6T-dPA" id="POA-CX-fXt"/>
                         <outlet property="userGuessTextField" destination="nhE-sS-Vax" id="do6-I6-xch"/>
+                        <outlet property="userStepsLabel" destination="T2g-AL-f3m" id="1Bd-Dm-nY5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -68,7 +83,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="206" y="-111"/>
+            <point key="canvasLocation" x="205.59999999999999" y="-111.0944527736132"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="9Qt-LQ-VBG">

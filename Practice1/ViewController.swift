@@ -13,11 +13,13 @@ class ViewController: UIViewController {
     var gameNumber = 0
     var minNumber = 1
     var maxNumber = 100
+    var userSteps = 0
     
     @IBOutlet weak var userGuessTextField: UITextField!
     @IBOutlet weak var inputNumberButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var dialogLabel: UILabel!
+    @IBOutlet weak var userStepsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,7 @@ class ViewController: UIViewController {
         resetButton.isHidden = true
         inputNumberButton.isHidden = false
         userGuessTextField.text = ""
+        userSteps = 0
         gameNumber = Int.random(in: minNumber...maxNumber)
         dialogLabel.text = "Guess \(minNumber).. \(maxNumber)!"
     }
@@ -39,6 +42,9 @@ class ViewController: UIViewController {
     }
     
     func checkGuess(guessNumber: Int) {
+        userSteps += 1
+        userStepsLabel.text = String(userSteps)
+        
         if(guessNumber < minNumber || guessNumber > maxNumber) {
             dialogLabel.text = "out of range"
             return
