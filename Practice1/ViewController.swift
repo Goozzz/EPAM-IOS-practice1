@@ -11,8 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     var gameNumber = 0
-    var minNumber = 1
-    var maxNumber = 100
+    var minNumber = UserDefaults.standard.integer(forKey: "Min")
+    var maxNumber = UserDefaults.standard.integer(forKey: "Max")
     var userSteps = 0
     
     @IBOutlet weak var userGuessTextField: UITextField!
