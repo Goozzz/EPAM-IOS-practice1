@@ -73,6 +73,15 @@ class ViewController: UIViewController {
         startNewGame()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSettingsSegue" {
+            if let controller = segue.destination as? SettingsViewController{
+                controller.minNumber = minNumber
+                controller.maxNumber = maxNumber
+            }
+        }
+    }
+    
 }
 
 

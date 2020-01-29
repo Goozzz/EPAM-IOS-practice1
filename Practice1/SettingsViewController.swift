@@ -31,6 +31,16 @@ class SettingsViewController: UIViewController {
                     minNumber = userMinNumber
                     maxNumber = userMaxNumber
                 }
+            } else {
+                if userMinNumber < maxNumber {
+                    minNumber = userMinNumber
+                }
+            }
+        } else {
+            if let userMaxText = maxNumberTextField.text, let userMaxNumber = Int(userMaxText) {
+                if userMaxNumber > minNumber {
+                    maxNumber = userMaxNumber
+                }
             }
         }
         
