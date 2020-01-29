@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         inputNumberButton.isHidden = false
         userGuessTextField.text = ""
         gameNumber = Int.random(in: minNumber...maxNumber)
-        dialogLabel.text = "Guess the number!"
+        dialogLabel.text = "Guess \(minNumber).. \(maxNumber)!"
     }
     
     func finishGame() {
@@ -67,10 +67,6 @@ class ViewController: UIViewController {
         startNewGame()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSettingsSegue" {
-        }
-    }
 }
 
 
