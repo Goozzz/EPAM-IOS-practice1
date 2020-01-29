@@ -19,33 +19,23 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(minNumber)
+        print(maxNumber)
     }
     
 
     @IBAction func saveNumberChange(_ sender: Any) {
-        print("okay")
         if let userMinText = minNumberTextField.text, let userMinNumber = Int(userMinText) {
             if let userMaxText = maxNumberTextField.text, let userMaxNumber = Int(userMaxText) {
                 if userMinNumber < userMaxNumber {
                     minNumber = userMinNumber
                     maxNumber = userMaxNumber
-                    minNumberTextField.text = ""
-                    maxNumberTextField.text = ""
-                }
-            } else {
-                if userMinNumber < maxNumber {
-                    minNumber = userMinNumber
-                    minNumberTextField.text = ""
-                }
-            }
-        } else {
-            if let userMaxText = maxNumberTextField.text, let userMaxNumber = Int(userMaxText) {
-                if userMaxNumber > minNumber {
-                    maxNumber = userMaxNumber
-                    maxNumberTextField.text = ""
                 }
             }
         }
+        
+        minNumberTextField.text = ""
+        maxNumberTextField.text = ""
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,6 +47,6 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    
-    
 }
+
+
