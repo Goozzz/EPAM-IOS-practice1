@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Practice1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Practice1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,10 +45,19 @@
                                     <action selector="enterGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xhN-f6-Fo7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvJ-5r-e09">
+                                <rect key="frame" x="176" y="582" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="f1G-Dn-ukO" kind="show" identifier="showSettingsSegue" id="7Re-Ea-UON"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="xa3-Hx-752"/>
                     <connections>
                         <outlet property="dialogLabel" destination="jJ2-Zw-2fJ" id="NTT-1J-E09"/>
                         <outlet property="inputNumberButton" destination="6HO-Y7-UEm" id="nOJ-Mx-bVZ"/>
@@ -58,7 +67,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="97.536945812807886"/>
+            <point key="canvasLocation" x="156" y="46"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9Qt-LQ-VBG">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="f1G-Dn-ukO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="spS-Tu-Gfr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="0Lx-XG-Aj1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="t4o-o8-ry6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IAo-qm-fGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055" y="-111"/>
         </scene>
     </scenes>
 </document>

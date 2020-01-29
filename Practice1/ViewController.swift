@@ -66,6 +66,11 @@ class ViewController: UIViewController {
     @IBAction func reset(_ sender: Any) {
         startNewGame()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSettingsSegue" {
+        }
+    }
 }
 
 
