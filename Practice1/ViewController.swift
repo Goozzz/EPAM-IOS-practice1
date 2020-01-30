@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+protocol ViewControllerDelegate: class {
+    func update(minNumber: Int, maxNumber: Int)
+}
+
+class ViewController: UIViewController, ViewControllerDelegate {
+
     var gameNumber = 0
     var minNumber = UserDefaults.standard.integer(forKey: "Min")
     var maxNumber = UserDefaults.standard.integer(forKey: "Max")
@@ -24,6 +28,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startNewGame()
+    }
+    
+    func update(minNumber: Int, maxNumber: Int) {
+        self.minNumber = minNumber
+        self.maxNumber = maxNumber
     }
     
     func startNewGame() {
@@ -75,9 +84,12 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSettingsSegue" {
-            if let controller = segue.destination as? SettingsViewController{
-                controller.minNumber = minNumber
-                controller.maxNumber = maxNumber
+            if let destinationController = segue.destination as? SettingsViewController{
+                print(minNumber)
+                print(maxNumber)
+                destinationController.minNumber = minNumber
+                destinationController.maxNumber = maxNumber
+                destinationController.delegate = self
             }
         }
     }
