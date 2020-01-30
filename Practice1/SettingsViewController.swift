@@ -23,7 +23,6 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
     }
     
-
     @IBAction func saveNumberChange(_ sender: Any) {
         if let userMinText = minNumberTextField.text, let userMinNumber = Int(userMinText) {
             if let userMaxText = maxNumberTextField.text, let userMaxNumber = Int(userMaxText) {

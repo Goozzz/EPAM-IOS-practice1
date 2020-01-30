@@ -15,10 +15,12 @@ protocol ViewControllerDelegate: class {
 class ViewController: UIViewController, ViewControllerDelegate {
 
     var gameNumber = 0
+    var gameCount = 0
+    var stepCount = 0
+    var bestStepCount = 9999
     var minNumber = UserDefaults.standard.integer(forKey: "Min")
     var maxNumber = UserDefaults.standard.integer(forKey: "Max")
-    var userSteps = 0
-    
+
     @IBOutlet weak var userGuessTextField: UITextField!
     @IBOutlet weak var inputNumberButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
@@ -39,20 +41,24 @@ class ViewController: UIViewController, ViewControllerDelegate {
         resetButton.isHidden = true
         inputNumberButton.isHidden = false
         userGuessTextField.text = ""
-        userSteps = 0
+        stepCount = 0
         gameNumber = Int.random(in: minNumber...maxNumber)
         dialogLabel.text = "Guess \(minNumber).. \(maxNumber)!"
     }
     
     func finishGame() {
+        if stepCount < bestStepCount {
+            bestStepCount = stepCount
+        }
+        gameCount += 1
         inputNumberButton.isHidden = true
         resetButton.isHidden = false
         dialogLabel.text = "Congratulations!"
     }
     
     func checkGuess(guessNumber: Int) {
-        userSteps += 1
-        userStepsLabel.text = String(userSteps)
+        stepCount += 1
+        userStepsLabel.text = String(stepCount)
         
         if(guessNumber < minNumber || guessNumber > maxNumber) {
             dialogLabel.text = "out of range"
@@ -84,16 +90,19 @@ class ViewController: UIViewController, ViewControllerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSettingsSegue" {
-            if let destinationController = segue.destination as? SettingsViewController{
-                print(minNumber)
-                print(maxNumber)
+            if let destinationController = segue.destination as? SettingsViewController {
                 destinationController.minNumber = minNumber
                 destinationController.maxNumber = maxNumber
                 destinationController.delegate = self
             }
         }
+        if segue.identifier == "showStatisticSegue" {
+            if let destinationController = segue.destination as? StatisticViewController {
+                destinationController.gameCount = gameCount
+                destinationController.stepCount = bestStepCount
+            }
+        }
     }
-    
 }
 
 
