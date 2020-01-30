@@ -13,6 +13,11 @@ protocol ViewControllerDelegate: class {
 }
 
 class ViewController: UIViewController, ViewControllerDelegate {
+    
+    let congratulationText = NSLocalizedString("Congratulations!", comment: "")
+    let startGameText = NSLocalizedString("Guess the number!", comment: "")
+    let numberGreaterText = NSLocalizedString("Number is greater", comment: "")
+    let numberLessText = NSLocalizedString("Number is less", comment: "")
 
     var gameNumber = 0
     var gameCount = 0
@@ -26,6 +31,7 @@ class ViewController: UIViewController, ViewControllerDelegate {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var dialogLabel: UILabel!
     @IBOutlet weak var userStepsLabel: UILabel!
+    @IBOutlet weak var rangeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +49,8 @@ class ViewController: UIViewController, ViewControllerDelegate {
         userGuessTextField.text = ""
         stepCount = 0
         gameNumber = Int.random(in: minNumber...maxNumber)
-        dialogLabel.text = "Guess \(minNumber).. \(maxNumber)!"
+        dialogLabel.text = startGameText
+        rangeLabel.text = "\(minNumber)..\(maxNumber)"
     }
     
     func finishGame() {
@@ -53,7 +60,7 @@ class ViewController: UIViewController, ViewControllerDelegate {
         gameCount += 1
         inputNumberButton.isHidden = true
         resetButton.isHidden = false
-        dialogLabel.text = "Congratulations!"
+        dialogLabel.text = congratulationText
     }
     
     func checkGuess(guessNumber: Int) {
@@ -68,9 +75,9 @@ class ViewController: UIViewController, ViewControllerDelegate {
         if guessNumber == gameNumber {
             finishGame()
         } else if guessNumber >  gameNumber {
-            dialogLabel.text = "Number is less"
+            dialogLabel.text = numberLessText
         } else {
-            dialogLabel.text = "Number is greater"
+            dialogLabel.text = numberGreaterText
         }
     }
 
