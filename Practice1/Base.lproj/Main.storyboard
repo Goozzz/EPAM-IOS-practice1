@@ -59,13 +59,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jE-1z-4YC">
+                                <rect key="frame" x="190" y="617" width="185" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <segue destination="f1G-Dn-ukO" kind="show" identifier="showSettingsSegue" id="MHn-Ue-zVu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="PRc-7d-Pg9" appends="YES" id="u9I-ED-R50"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="xa3-Hx-752"/>
                     <connections>
@@ -77,11 +82,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="PRc-7d-Pg9">
-                    <connections>
-                        <segue destination="f1G-Dn-ukO" kind="show" identifier="showSettingsSegue" id="W7o-3O-TPN"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="205.59999999999999" y="-111.0944527736132"/>
         </scene>
@@ -133,20 +133,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NR7-t1-ImK">
-                                <rect key="frame" x="172" y="354" width="30" height="30"/>
+                                <rect key="frame" x="147" y="370" width="83" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set"/>
                                 <connections>
                                     <action selector="saveNumberChange:" destination="f1G-Dn-ukO" eventType="touchUpInside" id="97q-XX-yGN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRP-Ap-RbB">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="saveSettingsSegue" id="QaE-m1-cfA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="0Lx-XG-Aj1"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="z7j-py-ccL" appends="YES" id="fHf-8E-RXw"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="t4o-o8-ry6"/>
                     <connections>
@@ -156,11 +161,6 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAo-qm-fGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="CeF-Ge-fof" userLabel="Exit" sceneMemberID="exit"/>
-                <swipeGestureRecognizer direction="left" id="z7j-py-ccL">
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="showGameSegue" id="nqS-zN-N3K"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1053.5999999999999" y="-111.0944527736132"/>
         </scene>
