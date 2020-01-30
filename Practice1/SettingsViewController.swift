@@ -14,6 +14,8 @@ class SettingsViewController: UIViewController {
     var minNumber = 1
     var maxNumber = 100
     
+    weak var delegate: ViewControllerDelegate?
+    
     @IBOutlet weak var minNumberTextField: UITextField!
     @IBOutlet weak var maxNumberTextField: UITextField!
     
@@ -48,19 +50,11 @@ class SettingsViewController: UIViewController {
             }
         }
         
+        delegate?.update(minNumber: minNumber, maxNumber: maxNumber)
+        
         minNumberTextField.text = ""
         maxNumberTextField.text = ""
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showGameSegue" {
-            if let controller = segue.destination as? ViewController{
-                controller.minNumber = minNumber
-                controller.maxNumber = maxNumber
-            }
-        }
-    }
-    
 }
 
 
