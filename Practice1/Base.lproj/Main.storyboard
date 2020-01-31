@@ -154,7 +154,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="saveSettingsSegue" id="QaE-m1-cfA"/>
+                                    <action selector="dismissView:" destination="f1G-Dn-ukO" eventType="touchUpInside" id="ngX-fh-gkr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJO-pi-RLJ">
@@ -221,7 +221,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="backToGameSegue" id="rAR-Lt-Iwu"/>
+                                    <action selector="pressButton:" destination="U8o-GJ-bJw" eventType="touchUpInside" id="6C9-Hq-kFi"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of steps:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rrp-9N-fXQ">
@@ -246,7 +246,4 @@
             <point key="canvasLocation" x="-634.39999999999998" y="-111.0944527736132"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="rAR-Lt-Iwu"/>
-    </inferredMetricsTieBreakers>
 </document>

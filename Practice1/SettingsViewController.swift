@@ -52,6 +52,10 @@ class SettingsViewController: UIViewController {
         minNumberTextField.text = ""
         maxNumberTextField.text = ""
     }
+    
+    @IBAction func dismissView(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 

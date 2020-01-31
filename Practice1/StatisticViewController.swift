@@ -26,4 +26,9 @@ class StatisticViewController: UIViewController {
         gameCountLabel.text = String(gameCount)
         stepCountLabel.text = String(stepCount)
     }
+    
+    @IBAction func pressButton(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+    }
 }

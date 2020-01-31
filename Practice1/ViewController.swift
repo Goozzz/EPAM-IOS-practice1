@@ -23,8 +23,8 @@ class ViewController: UIViewController, ViewControllerDelegate {
     var gameCount = 0
     var stepCount = 0
     var bestStepCount = 9999
-    var minNumber = UserDefaults.standard.integer(forKey: "Min")
-    var maxNumber = UserDefaults.standard.integer(forKey: "Max")
+    var minNumber = 1
+    var maxNumber = 2
 
     @IBOutlet weak var userGuessTextField: UITextField!
     @IBOutlet weak var inputNumberButton: UIButton!
@@ -38,9 +38,14 @@ class ViewController: UIViewController, ViewControllerDelegate {
         startNewGame()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        startNewGame()
+    }
+    
     func update(minNumber: Int, maxNumber: Int) {
         self.minNumber = minNumber
         self.maxNumber = maxNumber
+        print(self)
     }
     
     func startNewGame() {
@@ -103,10 +108,12 @@ class ViewController: UIViewController, ViewControllerDelegate {
                 destinationController.delegate = self
             }
         }
+        
         if segue.identifier == "showStatisticSegue" {
             if let destinationController = segue.destination as? StatisticViewController {
                 destinationController.gameCount = gameCount
                 destinationController.stepCount = bestStepCount
+                print(self)
             }
         }
     }
