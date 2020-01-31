@@ -23,8 +23,8 @@ class ViewController: UIViewController, ViewControllerDelegate {
     var gameCount = 0
     var stepCount = 0
     var bestStepCount = 9999
-    var minNumber = 1
-    var maxNumber = 2
+    var minNumber = UserDefaults.standard.integer(forKey: "Min")
+    var maxNumber = UserDefaults.standard.integer(forKey: "Max")
 
     @IBOutlet weak var userGuessTextField: UITextField!
     @IBOutlet weak var inputNumberButton: UIButton!
@@ -39,6 +39,7 @@ class ViewController: UIViewController, ViewControllerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         startNewGame()
     }
     
