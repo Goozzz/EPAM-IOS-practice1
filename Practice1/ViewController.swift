@@ -33,11 +33,6 @@ class ViewController: UIViewController, ViewControllerDelegate {
     @IBOutlet weak var userStepsLabel: UILabel!
     @IBOutlet weak var rangeLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        startNewGame()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         startNewGame()
@@ -46,7 +41,6 @@ class ViewController: UIViewController, ViewControllerDelegate {
     func update(minNumber: Int, maxNumber: Int) {
         self.minNumber = minNumber
         self.maxNumber = maxNumber
-        print(self)
     }
     
     func startNewGame() {
@@ -114,7 +108,6 @@ class ViewController: UIViewController, ViewControllerDelegate {
             if let destinationController = segue.destination as? StatisticViewController {
                 destinationController.gameCount = gameCount
                 destinationController.stepCount = bestStepCount
-                print(self)
             }
         }
     }
