@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Practice1
+
+  Created by Евгений Гусев on 30.01.2020.
+  Copyright © 2020 Евгений Гусев. All rights reserved.
+*/
+
+"Guess the number!" = "Угадай число!";
+"Congratulations!" = "Поздравляем!";
+"Number is greater" = "Число больше";
+"Number is less" = "Число меньше";

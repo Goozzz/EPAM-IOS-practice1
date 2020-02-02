@@ -1,0 +1,54 @@
+
+/* Class = "UIButton"; normalTitle = "Settings"; ObjectID = "2jE-1z-4YC"; */
+"2jE-1z-4YC.normalTitle" = "Настройки";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "334-Z0-NtK"; */
+"334-Z0-NtK.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Try"; ObjectID = "6HO-Y7-UEm"; */
+"6HO-Y7-UEm.normalTitle" = "Угадать";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "FXC-Cl-3IB"; */
+"FXC-Cl-3IB.normalTitle" = "Назад";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "ISz-6T-dPA"; */
+"ISz-6T-dPA.normalTitle" = "Заново";
+
+/* Class = "UILabel"; text = "Number of games:"; ObjectID = "NLn-Nf-tA2"; */
+"NLn-Nf-tA2.text" = "Число игр:";
+
+/* Class = "UILabel"; text = "Statistic"; ObjectID = "NNr-X0-u4V"; */
+"NNr-X0-u4V.text" = "Статистика";
+
+/* Class = "UIButton"; normalTitle = "Set"; ObjectID = "NR7-t1-ImK"; */
+"NR7-t1-ImK.normalTitle" = "Установить";
+
+/* Class = "UILabel"; text = "Number of steps:"; ObjectID = "Rrp-9N-fXQ"; */
+"Rrp-9N-fXQ.text" = "Число шагов:";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "T2g-AL-f3m"; */
+"T2g-AL-f3m.text" = "0";
+
+/* Class = "UILabel"; text = "Max"; ObjectID = "XUk-dq-4D0"; */
+"XUk-dq-4D0.text" = "Макс";
+
+/* Class = "UILabel"; text = "Min"; ObjectID = "eJO-pi-RLJ"; */
+"eJO-pi-RLJ.text" = "Мин";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "gRP-Ap-RbB"; */
+"gRP-Ap-RbB.normalTitle" = "Назад";
+
+/* Class = "UILabel"; text = "Guess the number!"; ObjectID = "jJ2-Zw-2fJ"; */
+"jJ2-Zw-2fJ.text" = "Отгадай число!";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "qDJ-V8-0nu"; */
+"qDJ-V8-0nu.text" = "Настройки";
+
+/* Class = "UILabel"; text = "Steps"; ObjectID = "u1T-i7-CyZ"; */
+"u1T-i7-CyZ.text" = "Шаги";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "uPK-HQ-osM"; */
+"uPK-HQ-osM.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Statistic"; ObjectID = "z0a-xK-sVf"; */
+"z0a-xK-sVf.normalTitle" = "Статистика";
