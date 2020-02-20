@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA2E9C4823FEAFFA008A3FE2 /* GameProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2E9C4723FEAFFA008A3FE2 /* GameProperties.swift */; };
+		AA2E9C4B23FEB135008A3FE2 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2E9C4A23FEB135008A3FE2 /* GameManager.swift */; };
+		AA2E9C4F23FEBB97008A3FE2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2E9C4E23FEBB97008A3FE2 /* MainViewModel.swift */; };
 		AAA21BB923E1EFAA0015979A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA21BB823E1EFAA0015979A /* SettingsViewController.swift */; };
 		AAA21BBB23E2E2780015979A /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA21BBA23E2E2780015979A /* StatisticViewController.swift */; };
 		AAA21BC023E2ECFD0015979A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAA21BBE23E2ECFD0015979A /* Localizable.strings */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA2E9C4723FEAFFA008A3FE2 /* GameProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProperties.swift; sourceTree = "<group>"; };
+		AA2E9C4A23FEB135008A3FE2 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		AA2E9C4E23FEBB97008A3FE2 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		AAA21BB823E1EFAA0015979A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AAA21BBA23E2E2780015979A /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		AAA21BBC23E2EC800015979A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
@@ -59,15 +65,17 @@
 		AA2E9C4223FEADC7008A3FE2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AA2E9C4723FEAFFA008A3FE2 /* GameProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		AA2E9C4323FEADD6008A3FE2 /* ViewMiodels */ = {
+		AA2E9C4323FEADD6008A3FE2 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AA2E9C4E23FEBB97008A3FE2 /* MainViewModel.swift */,
 			);
-			path = ViewMiodels;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		AA2E9C4423FEAE25008A3FE2 /* StoryBoards */ = {
@@ -97,6 +105,14 @@
 			path = BaseAppDelegetes;
 			sourceTree = "<group>";
 		};
+		AA2E9C4923FEB0AA008A3FE2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AA2E9C4A23FEB135008A3FE2 /* GameManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		AAD8933F23D99765000AC2A9 = {
 			isa = PBXGroup;
 			children = (
@@ -117,9 +133,10 @@
 			isa = PBXGroup;
 			children = (
 				AA2E9C4623FEAE9B008A3FE2 /* BaseAppDelegetes */,
+				AA2E9C4923FEB0AA008A3FE2 /* Services */,
 				AA2E9C4223FEADC7008A3FE2 /* Models */,
 				AA2E9C4123FEADBB008A3FE2 /* ViewControllers */,
-				AA2E9C4323FEADD6008A3FE2 /* ViewMiodels */,
+				AA2E9C4323FEADD6008A3FE2 /* ViewModels */,
 				AA2E9C4423FEAE25008A3FE2 /* StoryBoards */,
 				AA2E9C4523FEAE50008A3FE2 /* Resources */,
 				AAD8935923D99768000AC2A9 /* Info.plist */,
@@ -202,7 +219,10 @@
 			files = (
 				AAD8935023D99765000AC2A9 /* ViewController.swift in Sources */,
 				AAD8934C23D99765000AC2A9 /* AppDelegate.swift in Sources */,
+				AA2E9C4823FEAFFA008A3FE2 /* GameProperties.swift in Sources */,
+				AA2E9C4B23FEB135008A3FE2 /* GameManager.swift in Sources */,
 				AAD8934E23D99765000AC2A9 /* SceneDelegate.swift in Sources */,
+				AA2E9C4F23FEBB97008A3FE2 /* MainViewModel.swift in Sources */,
 				AAA21BBB23E2E2780015979A /* StatisticViewController.swift in Sources */,
 				AAA21BB923E1EFAA0015979A /* SettingsViewController.swift in Sources */,
 			);
