@@ -28,7 +28,6 @@ class StatisticViewController: UIViewController {
     }
     
     @IBAction func pressButton(_ sender: Any) {
-        
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }

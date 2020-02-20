@@ -54,7 +54,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func dismissView(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }
 
