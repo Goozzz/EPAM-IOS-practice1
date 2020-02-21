@@ -11,10 +11,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
-    var minNumber = 1
-    var maxNumber = 100
-    
-    weak var delegate: ViewControllerDelegate?
+    weak var delegate: UpdataRangeDelegate?
     
     @IBOutlet weak var minNumberTextField: UITextField!
     @IBOutlet weak var maxNumberTextField: UITextField!
@@ -24,30 +21,8 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func saveNumberChange(_ sender: Any) {
-        if let userMinText = minNumberTextField.text, let userMinNumber = Int(userMinText) {
-            if let userMaxText = maxNumberTextField.text, let userMaxNumber = Int(userMaxText) {
-                if userMinNumber < userMaxNumber {
-                    minNumber = userMinNumber
-                    maxNumber = userMaxNumber
-                    UserDefaults.standard.set(minNumber, forKey: "Min")
-                    UserDefaults.standard.set(maxNumber, forKey: "Max")
-                }
-            } else {
-                if userMinNumber < maxNumber {
-                    minNumber = userMinNumber
-                    UserDefaults.standard.set(minNumber, forKey: "Min")
-                }
-            }
-        } else {
-            if let userMaxText = maxNumberTextField.text, let userMaxNumber = Int(userMaxText) {
-                if userMaxNumber > minNumber {
-                    maxNumber = userMaxNumber
-                    UserDefaults.standard.set(maxNumber, forKey: "Max")
-                }
-            }
-        }
-        
-        delegate?.update(minNumber: minNumber, maxNumber: maxNumber)
+        delegate?.updateRange(userMin: minNumberTextField.text,
+                              userMax: maxNumberTextField.text)
         
         minNumberTextField.text = ""
         maxNumberTextField.text = ""

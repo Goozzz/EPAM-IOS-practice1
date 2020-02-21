@@ -11,8 +11,8 @@ import UIKit
 
 class StatisticViewController: UIViewController {
     
-    var stepCount = 0
-    var gameCount = 0
+    var stepCount = ""
+    var gameCount = ""
     
     @IBOutlet weak var gameCountLabel: UILabel!
     @IBOutlet weak var stepCountLabel: UILabel!
@@ -23,8 +23,8 @@ class StatisticViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        gameCountLabel.text = String(gameCount)
-        stepCountLabel.text = String(stepCount)
+        gameCountLabel.text = gameCount
+        stepCountLabel.text = stepCount
     }
     
     @IBAction func pressButton(_ sender: Any) {

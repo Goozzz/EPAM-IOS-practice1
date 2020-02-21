@@ -65,6 +65,7 @@
 		AA2E9C4223FEADC7008A3FE2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AA2E9C4A23FEB135008A3FE2 /* GameManager.swift */,
 				AA2E9C4723FEAFFA008A3FE2 /* GameProperties.swift */,
 			);
 			path = Models;
@@ -105,14 +106,6 @@
 			path = BaseAppDelegetes;
 			sourceTree = "<group>";
 		};
-		AA2E9C4923FEB0AA008A3FE2 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				AA2E9C4A23FEB135008A3FE2 /* GameManager.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		AAD8933F23D99765000AC2A9 = {
 			isa = PBXGroup;
 			children = (
@@ -133,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				AA2E9C4623FEAE9B008A3FE2 /* BaseAppDelegetes */,
-				AA2E9C4923FEB0AA008A3FE2 /* Services */,
 				AA2E9C4223FEADC7008A3FE2 /* Models */,
 				AA2E9C4123FEADBB008A3FE2 /* ViewControllers */,
 				AA2E9C4323FEADD6008A3FE2 /* ViewModels */,

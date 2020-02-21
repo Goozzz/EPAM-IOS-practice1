@@ -8,24 +8,16 @@
 
 import UIKit
 
-protocol ViewControllerDelegate: class {
-    func update(minNumber: Int, maxNumber: Int)
-}
-
-class ViewController: UIViewController, ViewControllerDelegate {
+class ViewController: UIViewController {
     
-    let congratulationText = NSLocalizedString("Congratulations!", comment: "")
-    let startGameText = NSLocalizedString("Guess the number!", comment: "")
-    let numberGreaterText = NSLocalizedString("Number is greater", comment: "")
-    let numberLessText = NSLocalizedString("Number is less", comment: "")
-
-    var gameNumber = 0
-    var gameCount = 0
-    var stepCount = 0
-    var bestStepCount = 9999
-    var minNumber = UserDefaults.standard.integer(forKey: "Min")
-    var maxNumber = UserDefaults.standard.integer(forKey: "Max")
+    private enum labelsText {
+        static let congratulationText = NSLocalizedString("Congratulations!", comment: "")
+        static let startGameText = NSLocalizedString("Guess the number!", comment: "")
+        static let numberGreaterText = NSLocalizedString("Number is greater", comment: "")
+        static let numberLessText = NSLocalizedString("Number is less", comment: "")
+    }
     
+    private let gameViewModel = GameViewModel()
 
     @IBOutlet weak var userGuessTextField: UITextField!
     @IBOutlet weak var inputNumberButton: UIButton!
@@ -40,78 +32,58 @@ class ViewController: UIViewController, ViewControllerDelegate {
         startNewGame()
     }
     
-    func update(minNumber: Int, maxNumber: Int) {
-        self.minNumber = minNumber
-        self.maxNumber = maxNumber
-    }
-    
-    func startNewGame() {
-        resetButton.isHidden = true
-        inputNumberButton.isHidden = false
-        userGuessTextField.text = ""
-        stepCount = 0
-        gameNumber = Int.random(in: minNumber...maxNumber)
-        dialogLabel.text = startGameText
-        rangeLabel.text = "\(minNumber)..\(maxNumber)"
-    }
-    
-    func finishGame() {
-        if stepCount < bestStepCount {
-            bestStepCount = stepCount
-        }
-        gameCount += 1
-        inputNumberButton.isHidden = true
-        resetButton.isHidden = false
-        dialogLabel.text = congratulationText
-    }
-    
-    func checkGuess(guessNumber: Int) {
-        stepCount += 1
-        userStepsLabel.text = String(stepCount)
-        
-        if(guessNumber < minNumber || guessNumber > maxNumber) {
-            dialogLabel.text = "out of range"
-            return
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSettingsSegue" {
+            if let destinationController = segue.destination as? SettingsViewController {
+                destinationController.delegate = gameViewModel.self
+            }
         }
         
-        if guessNumber == gameNumber {
-            finishGame()
-        } else if guessNumber >  gameNumber {
-            dialogLabel.text = numberLessText
-        } else {
-            dialogLabel.text = numberGreaterText
+        if segue.identifier == "showStatisticSegue" {
+            if let destinationController = segue.destination as? StatisticViewController {
+                let (gameCount, bestStepCount) = gameViewModel.getStatistic()
+                destinationController.gameCount = gameCount
+                destinationController.stepCount = bestStepCount
+            }
         }
     }
-
+    
     @IBAction func enterGuess(_ sender: Any) {
-        if let userText = userGuessTextField.text, let guessNumber = Int(userText) {
+        let checked = gameViewModel.checkMatch(playerText: userGuessTextField.text)
+        
+        switch checked {
+        case .less:
+            dialogLabel.text = labelsText.numberLessText
+        case .more:
+            dialogLabel.text = labelsText.numberGreaterText
+        case .match:
+            finishGame()
+        case .undefiend:
             userGuessTextField.text = ""
-            checkGuess(guessNumber: guessNumber)
-        } else {
-            userGuessTextField.text = ""
-            return
         }
+        
+        userGuessTextField.text = ""
+        userStepsLabel.text = gameViewModel.getSteps()
     }
     
     @IBAction func reset(_ sender: Any) {
         startNewGame()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSettingsSegue" {
-            if let destinationController = segue.destination as? SettingsViewController {
-                destinationController.minNumber = minNumber
-                destinationController.maxNumber = maxNumber
-                destinationController.delegate = self
-            }
-        }
-        
-        if segue.identifier == "showStatisticSegue" {
-            if let destinationController = segue.destination as? StatisticViewController {
-                destinationController.gameCount = gameCount
-                destinationController.stepCount = bestStepCount
-            }
-        }
+    func startNewGame() {
+        resetButton.isHidden = true
+        inputNumberButton.isHidden = false
+        userGuessTextField.text = ""
+        dialogLabel.text = labelsText.startGameText
+        let (minNumber, maxNumber) = gameViewModel.getRange()
+        rangeLabel.text = "\(minNumber)..\(maxNumber)"
+        gameViewModel.starNewGame()
+    }
+    
+    func finishGame() {
+        inputNumberButton.isHidden = true
+        resetButton.isHidden = false
+        dialogLabel.text = labelsText.congratulationText
     }
 }
 

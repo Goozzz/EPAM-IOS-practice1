@@ -11,12 +11,16 @@ import Foundation
 struct GameProperties {
     var minNumber: Int
     var maxNumber: Int
+    var bestSteps: Int
+    var games: Int
     var guessedNumber: Int
     
     init(min: Int, max: Int) {
-        self.minNumber = min
-        self.maxNumber = max
-        guessedNumber = Int.random(in: self.minNumber...self.maxNumber)
+        minNumber = min
+        maxNumber = max
+        games = 0
+        bestSteps = 9999
+        guessedNumber = Int.random(in: minNumber...maxNumber)
     }
     
 }

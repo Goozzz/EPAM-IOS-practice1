@@ -8,32 +8,46 @@
 
 import Foundation
 
-protocol MainViewModelProtocol: class {
-    func starNewGame()
-    func checkMatch(playerNumber: String?)
-}
-
 protocol UpdataRangeDelegate: class {
-        func updateRange(min: Int, max: Int)
+    func updateRange(userMin: String?, userMax: String?)
 }
 
-class MainViewModel: MainViewModelProtocol, UpdataRangeDelegate {
+class GameViewModel: UpdataRangeDelegate {
     private let gameManager = GameManager()
-    private let viewController: ViewController
     
-    init(viewController: ViewController) {
-        self.viewController = viewController
-    }
-    
-    func checkMatch(playerNumber: String?) {
-        self.gameManager.checkMatch(playerNumber: 0)
+    func checkMatch(playerText: String?) -> numberComparison {
+        guard let text = playerText, let number = Int(text) else {
+            return .undefiend
+        }
+        
+        return gameManager.checkMatch(playerNumber: number)
     }
     
     func starNewGame() {
-        self.gameManager.configForNewGame()
+        gameManager.configForNewGame()
     }
     
-    func updateRange(min: Int, max: Int) {
-        self.gameManager.setRange(min: min, max: max)
+    func updateRange(userMin: String?, userMax: String?) {
+        guard let minText = userMin,
+            let min = Int(minText),
+            let maxText = userMax,
+            let max = Int(maxText) else {
+            return
+        }
+        
+        gameManager.setRange(min: min, max: max)
+    }
+    
+    func getSteps() -> String {
+        return String(gameManager.getSteps())
+    }
+    func getRange() -> (String, String) {
+        let (min, max) = gameManager.getRange()
+        return (String(min), String(max))
+    }
+    
+    func getStatistic() -> (String, String){
+        let (games, steps) = gameManager.getStatistic()
+        return (String(games), String(steps))
     }
 }
