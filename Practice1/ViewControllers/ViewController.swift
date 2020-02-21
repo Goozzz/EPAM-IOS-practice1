@@ -33,18 +33,20 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSettingsSegue" {
+        let segueIdentifier = segue.identifier
+        switch segueIdentifier {
+        case "showSettingsSegue":
             if let destinationController = segue.destination as? SettingsViewController {
                 destinationController.delegate = gameViewModel.self
             }
-        }
-        
-        if segue.identifier == "showStatisticSegue" {
+        case "showStatisticSegue":
             if let destinationController = segue.destination as? StatisticViewController {
                 let (gameCount, bestStepCount) = gameViewModel.getStatistic()
                 destinationController.gameCount = gameCount
                 destinationController.stepCount = bestStepCount
             }
+        default:
+            return
         }
     }
     
